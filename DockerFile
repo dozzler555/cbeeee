@@ -8,8 +8,6 @@ RUN sudo -E apt-get clean
 RUN sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
 RUN sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
 RUN sudo chmod a+rx /usr/local/bin/repo
-RUN wget https://raw.githubusercontent.com/dozzler555/sem/main/sem.sh
-RUN chmod a+x sem.sh
 RUN bash sem.sh
 COPY . .
 CMD [“echo”,”Image created”,"/bin/bash/"] 
