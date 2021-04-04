@@ -12,4 +12,4 @@ RUN wget https://raw.githubusercontent.com/dozzler555/sem/main/sem.sh
 RUN chmod a+x sem.sh
 RUN bash sem.sh
 COPY . .
-CMD [“echo”,”Image created”,"/bin/bash/] 
+CMD [“echo”,”Image created”,"/bin/bash/"] 
