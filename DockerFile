@@ -1,7 +1,12 @@
 #This is a sample Image 
 FROM ubuntu 
 MAINTAINER demousr@gmail.com
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends git cmake g++
+
+# Cleanup
+RUN  apt-get clean && \
+  rm -rf /var/lib/apt
+
 RUN apt-get update 
 RUN apt-get install sudo -y
 RUN sudo -E apt-get clean
