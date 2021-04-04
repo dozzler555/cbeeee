@@ -1,3 +1,10 @@
 - name: foo_step
   service: codeship_example
-  command: /bin/bash -c 'sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2; sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo; sudo chmod a+rx /usr/local/bin/repo; wget https://raw.githubusercontent.com/dozzler555/sem/main/sem.sh; chmod a+x sem.sh; ./sem.sh'
+  command: |
+         apt-get update
+         apt-get install git -y
+         apt-get install sudo -y
+         apt-get install curl -y
+         git config --global user.name "Dazzler555"
+         git config --global user.email "71560605+Dazzler555@users.noreply.github.com"
+         curl -o sem.sh https://raw.githubusercontent.com/Dazzler555/wewasgc/main/build.sh
