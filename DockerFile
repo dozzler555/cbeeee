@@ -1,9 +1,11 @@
 #This is a sample Image 
 FROM ubuntu 
 MAINTAINER demousr@gmail.com
-
+ENV TZ=Europe/Kiev
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update 
 RUN apt-get install sudo -y
 RUN sudo -E apt-get clean
+
 COPY . .
 CMD [“echo”,”Image created”,"/bin/bash/"] 
